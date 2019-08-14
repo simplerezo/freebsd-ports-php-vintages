@@ -3,15 +3,15 @@ Patch your Ports tree for (removed) PHP5.6 support with the last available versi
 
 Tested on FreeBSD 11.2 and 12.0.
 
-## Patch your subtree
+## Patch your Ports tree
 
-First, update your Ports tree by your favourite methods, and then:
+First, update your FreeBSD Ports tree by your favourite method (probably "portsnap fetch update"), and then:
 
     fetch https://raw.githubusercontent.com/simplerezo/freebsd-ports-php56/master/php56.sh
     chmod +x php56.sh
     ./php56.sh
     
-Note: you probably need to re-run the script after every Ports tree update.
+Note: you need to re-run the script after every FreeBSD Ports tree update.
     
 ## Usage
 
