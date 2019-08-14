@@ -23,7 +23,7 @@ for i in \
     textproc/php56-ctype textproc/php56-dom textproc/php56-enchant textproc/php56-pspell textproc/php56-simplexml textproc/php56-wddx textproc/php56-xml textproc/php56-xmlreader textproc/php56-xmlwriter textproc/php56-xsl \
     www/mod_php56 www/php56-opcache www/php56-session www/php56-tidy \
     ; do 
-  # svnlite co -r $SVN_REVISION ${SVN_URL}/branches/2019Q1/$i $DIR_PORTS/$i
+  svnlite co -r $SVN_REVISION ${SVN_URL}/branches/2019Q1/$i $DIR_PORTS/$i
 done
 svnlite co -r $SVN_REVISION ${SVN_URL}/branches/2018Q4/lang/php56-extensions $DIR_PORTS/lang/php56-extensions
 
