@@ -30,9 +30,9 @@ svnlite co -r $SVN_REVISION ${SVN_URL}/branches/2018Q4/lang/php56-extensions $DI
 # Patch Uses/php.mk
 patch -N $DIR_PORTS/Mk/Uses/php.mk <<EOF
 113c113
-< _ALL_PHP_VERSIONS=	71 72 73
+< _ALL_PHP_VERSIONS=	72 73 74
 ---
-> _ALL_PHP_VERSIONS=	56 71 72 73
+> _ALL_PHP_VERSIONS=	56 72 73 74
 185a186,188
 > .    elif \${PHP_VER} == 56
 > PHP_EXT_DIR=   20131226
