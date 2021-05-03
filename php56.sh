@@ -26,30 +26,8 @@ for i in \
   svnlite co -r $SVN_REVISION ${SVN_URL}/branches/2019Q1/$i $DIR_PORTS/$i
 done
 svnlite co -r $SVN_REVISION ${SVN_URL}/branches/2018Q4/lang/php56-extensions $DIR_PORTS/lang/php56-extensions
-
-# Patch Uses/php.mk
-patch -N $DIR_PORTS/Mk/Uses/php.mk <<EOF
-113c113
-< _ALL_PHP_VERSIONS=	71 72 73
----
-> _ALL_PHP_VERSIONS=	56 71 72 73
-185a186,188
-> .    elif \${PHP_VER} == 56
-> PHP_EXT_DIR=   20131226
-> PHP_EXT_INC=    pcre spl
-222c225
-< 		(doesn't support PHP \${IGNORE_WITH_PHP:C/^(7)/\\1./})
----
-> 		(doesn't support PHP \${IGNORE_WITH_PHP:C/^([57])/\\1./})
-371c374
-< 		memcache memcached mysqli odbc opcache \\
----
-> 		memcache memcached mysql mysqli odbc opcache \\
-377a381
-> _USE_PHP_VER56=	\${_USE_PHP_ALL} mssql mysql sybase_ct
-415a420
-> mysql_DEPENDS=	databases/php\${PHP_VER}-mysql
-EOF
+svnlite co -r $SVN_REVISION ${SVN_URL}/branches/2019Q1/Mk/Uses $DIR_PORTS/Mk/Uses.php56 || exit $?
+cp $DIR_PORTS/Mk/Uses.php56/php.mk $DIR_PORTS/Mk/Uses
 
 # Update to 5.6.40
 sed -i '' 's/5\.6\.39/5\.6\.40/' $DIR_PORTS/lang/php56/Makefile
