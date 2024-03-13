@@ -2,8 +2,8 @@
 
 DIR_CACHE=/tmp/oldports-cache
 DIR_PORTS=/usr/ports
-GIT_BRANCH=2022Q4
-PHP_VER=74
+GIT_BRANCH=2023Q4
+PHP_VER=80
 URL_GIT=https://github.com/freebsd/freebsd-ports/tree/$GIT_BRANCH
 URL_GHGET=https://raw.githubusercontent.com/mohd-akram/ghget/master/ghget
 
@@ -50,7 +50,6 @@ for i in \
   databases/php${PHP_VER}-sqlite3 \
   devel/php${PHP_VER}-gettext \
   devel/php${PHP_VER}-intl \
-  devel/php${PHP_VER}-json \
   devel/php${PHP_VER}-pcntl \
   devel/php${PHP_VER}-readline \
   devel/php${PHP_VER}-shmop \
@@ -71,10 +70,8 @@ for i in \
   net/php${PHP_VER}-ldap \
   net/php${PHP_VER}-soap \
   net/php${PHP_VER}-sockets \
-  net/php${PHP_VER}-xmlrpc \
   net-mgmt/php${PHP_VER}-snmp \
   security/php${PHP_VER}-filter \
-  security/php${PHP_VER}-openssl \
   sysutils/php${PHP_VER}-fileinfo \
   sysutils/php${PHP_VER}-posix \
   textproc/php${PHP_VER}-ctype \
